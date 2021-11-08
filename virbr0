@@ -1,0 +1,13 @@
+#auto virbr0
+iface virbr0 inet static
+    bridge-ports none
+    bridge-stp off       # disable Spanning Tree Protocol
+    bridge-waitport 0    # no delay before a port becomes available
+    bridge-fd 0          # no forwarding delay
+    address 172.32.255.1
+    netmask 255.255.255.0
+
+    post-up /sbin/sysctl net.ipv4.conf.all.forwarding=1 || true
+    post-up /sbin/iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE || true
+    post-up /sbin/iptables -A FORWARD -i eth0 -j ACCEPT
+    post-up /sbin/iptables -A FORWARD -o eth0 -j ACCEPT

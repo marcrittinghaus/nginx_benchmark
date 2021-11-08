@@ -1,0 +1,18 @@
+[submodule "unikraft"]
+	path = unikraft
+	url = https://github.com/unikraft/unikraft
+[submodule "wrk"]
+	path = wrk
+	url = https://github.com/wg/wrk
+[submodule "libs/lib-nginx"]
+	path = libs/lib-nginx
+	url = https://github.com/unikraft/lib-nginx
+[submodule "libs/lib-newlib"]
+	path = libs/lib-newlib
+	url = https://github.com/unikraft/lib-newlib
+[submodule "libs/lib-pthread-embedded"]
+	path = libs/lib-pthread-embedded
+	url = https://github.com/unikraft/lib-pthread-embedded
+[submodule "libs/lib-lwip"]
+	path = libs/lib-lwip
+	url = https://github.com/unikraft/lib-lwip
